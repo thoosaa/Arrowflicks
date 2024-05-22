@@ -1,0 +1,96 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 8px;
+
+    height: 218px;
+
+    background: #ffffff;
+    border-radius: 12px;
+
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+}
+
+.info {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.text {
+    width: 263px;
+    height: 170px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.generalInfo {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.movieName {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #9854f6;
+    flex: none;
+}
+
+.ratingRevenue {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ratingInfo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.grayText {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 19px;
+    color: #7b7c88;
+    flex: none;
+}
+
+.genres {
+    display: flex;
+    align-items: start;
+    gap: 8px;
+    width: 100%;
+}
+
+.genresList {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+}
+
+.rate {
+    background-color: inherit;
+}

@@ -1,0 +1,1 @@
+export { MovieMain } from "./moviemain";

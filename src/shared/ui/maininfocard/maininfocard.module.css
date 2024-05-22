@@ -1,0 +1,90 @@
+.topCard {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 16px;
+
+    width: 800px;
+    height: 400px;
+    background: #ffffff;
+    border-radius: 12px;
+}
+
+.mainInfo {
+    display: flex;
+    flex-direction: row;
+    gap: 16px;
+}
+
+.textInfo {
+    width: 442px;
+    height: 352px;
+    opacity: 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.movieParams {
+    display: grid;
+    grid-template-columns: 140px auto;
+    gap: 8px;
+}
+
+.text {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    flex: none;
+}
+
+.grey {
+    color: #7b7c88;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.mainParams {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.title {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+
+    color: #9854f6;
+
+    flex: none;
+}
+
+.rate {
+    background-color: inherit;
+}
+
+.ratingRevenue {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.ratingInfo {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+}

@@ -1,0 +1,69 @@
+.modalHeader {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 50px;
+
+    border-bottom: 1px solid #eaebed;
+    flex: none;
+}
+
+.modalTitle {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 140%;
+    color: #000000;
+    flex: none;
+}
+
+.modalBody {
+    padding: 16px !important;
+}
+
+.movieTitle {
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140%;
+
+    color: #000000;
+    flex: none;
+}
+
+.modalRateContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.starsRating {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modalButtons {
+    display: flex;
+}
+
+.modalButton {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19.6px;
+}
+
+.saveButton {
+    color: white;
+    background-color: #9854f6;
+}
+
+.removeButton {
+    background-color: inherit;
+    color: #9854f6;
+}

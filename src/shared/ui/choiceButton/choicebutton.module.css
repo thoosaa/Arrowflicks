@@ -1,0 +1,50 @@
+.active,
+.notActive {
+    border: 0;
+    padding: 10px;
+    margin: 0;
+    width: 232px;
+    height: 42px;
+    border-radius: 8px;
+}
+
+.active {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    background: #e5d5fa;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 140%;
+    display: flex;
+    align-items: center;
+
+    color: #9854f6;
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+.notActive {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    background: #f2ebf9;
+    border-radius: 8px;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-size: 16px;
+    line-height: 140%;
+    display: flex;
+    align-items: center;
+
+    color: #000000;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}

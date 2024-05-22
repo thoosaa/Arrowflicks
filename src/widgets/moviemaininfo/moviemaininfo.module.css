@@ -1,0 +1,57 @@
+.containerMovie {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 20px;
+
+    position: absolute;
+    width: 800px;
+    height: 1189px;
+    left: 460px;
+    top: 40px;
+}
+
+.loaderContainer {
+    height: 100vh;
+    width: 980px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 15px;
+    font-family: "Inter";
+    font-size: 16px;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0px;
+    gap: 10px;
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: #9854f6;
+}
+
+.mainInfo {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 16px;
+    border: 1px solid purple;
+
+    width: 800px;
+    height: 400px;
+    background: #ffffff;
+    border-radius: 12px;
+}
+
+.rate {
+    background-color: inherit;
+}

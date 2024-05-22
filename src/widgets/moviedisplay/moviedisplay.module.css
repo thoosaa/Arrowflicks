@@ -1,0 +1,21 @@
+.container {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+}
+
+.pag {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+}
+
+.loaderContainer {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 30px;
+    gap: 15px;
+}
