@@ -7,8 +7,7 @@ export function AdditionalInfoCard({ movie }) {
             (video) =>
                 video.name == "Official Trailer" && video.type == "Trailer"
         );
-        console.log(trailer?.key, trailer.name);
-        return trailer;
+        return trailer ? trailer : "";
     };
 
     const checkTrailer = (trailer) => {

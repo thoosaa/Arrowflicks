@@ -1,6 +1,5 @@
 import { useParams } from "react-router-dom";
 import { SideBar } from "../../widgets/sidebar";
-import styles from "../../shared/styles/main.module.css";
 import { useEffect, useState } from "react";
 import { MovieMainInfo } from "../../widgets/moviemaininfo";
 
@@ -25,7 +24,7 @@ export function MoviePage() {
     console.log(movie);
 
     return (
-        <div className={styles.main}>
+        <div className="main">
             <SideBar />
             <MovieMainInfo movie={movie} />
         </div>

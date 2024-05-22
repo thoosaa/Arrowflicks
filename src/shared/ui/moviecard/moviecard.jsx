@@ -8,7 +8,7 @@ import {
     displayIfEmpty,
     formatGenres,
 } from "../../../features/correctDisplay";
-import { showCorrectPicture } from "../../../features/emptyPosterHandler";
+import { showCorrectPicture } from "../emptyPosterHandler/emptyPosterHandler";
 
 export function MovieCard({ movie, onCardClick, onStarClick }) {
     let [genres, setGenres] = useState("");

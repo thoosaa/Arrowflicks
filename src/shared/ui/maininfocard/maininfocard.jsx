@@ -10,7 +10,7 @@ import {
     formatGenres,
     formatYear,
 } from "../../../features/correctDisplay";
-import { showCorrectPicture } from "../../../features/emptyPosterHandler";
+import { showCorrectPicture } from "../emptyPosterHandler/emptyPosterHandler";
 
 export function MainInfoCard({ movie }) {
     return (

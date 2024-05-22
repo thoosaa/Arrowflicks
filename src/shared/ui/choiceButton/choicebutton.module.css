@@ -3,9 +3,9 @@
     border: 0;
     padding: 10px;
     margin: 0;
-    width: 232px;
     height: 42px;
     border-radius: 8px;
+    width: 232px; /**/
 }
 
 .active {
