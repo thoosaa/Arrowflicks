@@ -27,11 +27,11 @@ export function MovieDisplay({ options }) {
         setIsLoading(true);
         const fetchMoviesData = async (activePage = 1) => {
             let moviesData, searchstr;
-            if (options) {
+            /*if (options) {
                 searchstr = createRequest(options, activePage);
-            } else {
-                searchstr = `/api/movie/popular?page=${activePage}`;
-            }
+            } else {*/
+            searchstr = `/api/movie/popular?page=${activePage}`;
+            /*}*/
             const response = await axios.get(searchstr);
             moviesData = response.data;
             setTotalPages(
