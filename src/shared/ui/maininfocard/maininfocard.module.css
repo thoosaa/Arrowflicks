@@ -1,4 +1,4 @@
-.topCard {
+.top-card {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
@@ -11,13 +11,13 @@
     border-radius: 12px;
 }
 
-.mainInfo {
+.main-info {
     display: flex;
     flex-direction: row;
     gap: 16px;
 }
 
-.textInfo {
+.info-container {
     width: 442px;
     height: 352px;
     opacity: 0px;
@@ -26,43 +26,26 @@
     justify-content: space-between;
 }
 
-.movieParams {
+.additional-info-container {
     display: grid;
     grid-template-columns: 140px auto;
     gap: 8px;
 }
 
-.text {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
-    flex: none;
-}
-
 .grey {
-    color: #7b7c88;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
+    color: var(--grey-600);
 }
 
-.mainParams {
+.main-info-container {
     display: flex;
     flex-direction: column;
     gap: 8px;
 }
 
 .title {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 600;
     font-size: 20px;
     line-height: 24px;
-
-    color: #9854f6;
-
+    color: var(--purple-500-main);
     flex: none;
 }
 
@@ -70,20 +53,16 @@
     background-color: inherit;
 }
 
-.ratingRevenue {
+.rating-info-container {
     display: flex;
     align-items: center;
     gap: 8px;
 }
 
-.ratingInfo {
+.rating-number {
     display: flex;
     align-items: center;
     gap: 4px;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 600;
     font-size: 16px;
     line-height: 20px;
     color: #000000;

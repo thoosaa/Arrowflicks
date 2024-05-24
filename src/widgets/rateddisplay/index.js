@@ -1,0 +1,1 @@
+export { RatedDisplay } from "./rateddisplay";

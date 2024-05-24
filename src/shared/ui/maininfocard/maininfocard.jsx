@@ -14,17 +14,21 @@ import { showCorrectPicture } from "../emptyPosterHandler/emptyPosterHandler";
 
 export function MainInfoCard({ movie }) {
     return (
-        <div className={styles.topCard}>
-            <div className={styles.mainInfo}>
+        <div className={styles["top-card"]}>
+            <div className={styles["main-info"]}>
                 {showCorrectPicture(movie.poster_path, 250, 352)}
-                <div className={styles.textInfo}>
-                    <div className={styles.mainParams}>
-                        <p className={styles.title}>{movie.title}</p>
-                        <p className={styles.grey}>
+                <div className={styles["info-container"]}>
+                    <div className={styles["main-info-container"]}>
+                        <p className={`${styles["title"]} inter-bold`}>
+                            {movie.title}
+                        </p>
+                        <p className={`${styles.grey} inter-semibold`}>
                             {displayIfEmpty(movie.release_date, formatYear)}
                         </p>
-                        <div className={styles.ratingRevenue}>
-                            <div className={styles.ratingInfo}>
+                        <div className={styles["rating-info-container"]}>
+                            <div
+                                className={`${styles["rating-number"]} inter-bold`}
+                            >
                                 <img src={yellowStar} />
                                 <p>
                                     {(
@@ -33,36 +37,36 @@ export function MainInfoCard({ movie }) {
                                     ).toFixed(2)}
                                 </p>
                             </div>
-                            <p className={styles.grey}>
+                            <p className={`${styles.grey} inter-semibold`}>
                                 ({formatVotes(movie.vote_count)})
                             </p>
                         </div>
                     </div>
-                    <div className={styles.movieParams}>
-                        <p className={styles.text}>Duration: </p>
-                        <p className={styles.grey}>
+                    <div className={styles["additional-info-container"]}>
+                        <p className="inter-semibold">Duration: </p>
+                        <p className={`${styles.grey} inter-semibold`}>
                             {displayIfEmpty(movie.runtime, formatDuration)}
                         </p>
-                        <p className={styles.text}>Premiere: </p>
-                        <p className={styles.grey}>
+                        <p className="inter-semibold">Premiere: </p>
+                        <p className={`${styles.grey} inter-semibold`}>
                             {displayIfEmpty(movie.release_date, formatPremiere)}
                         </p>
-                        <p className={styles.text}>Budget: </p>
-                        <p className={styles.grey}>
+                        <p className="inter-semibold">Budget: </p>
+                        <p className={`${styles.grey} inter-semibold`}>
                             {displayIfEmpty(movie.budget, formatMoney)}
                         </p>
-                        <p className={styles.text}>Gross worldwide:</p>{" "}
-                        <p className={styles.grey}>
+                        <p className="inter-semibold">Gross worldwide:</p>{" "}
+                        <p className={`${styles.grey} inter-semibold`}>
                             {displayIfEmpty(movie.revenue, formatMoney)}
                         </p>
-                        <p className={styles.text}>Genres:</p>
-                        <p className={styles.grey}>
+                        <p className="inter-semibold">Genres:</p>
+                        <p className={`${styles.grey} inter-semibold`}>
                             {formatGenres(movie.genres)}
                         </p>
                     </div>
                 </div>
             </div>
-            <button className={styles.rate}>
+            <button className={styles["rate"]}>
                 <img src={grayStar} />
             </button>
         </div>

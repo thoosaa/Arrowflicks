@@ -1,5 +1,5 @@
 import styles from "./additionalinfocard.module.css";
-import clapperboard from "./clapperboard.svg";
+import clapperboard from "../../svg/clapperboard.svg";
 
 export function AdditionalInfoCard({ movie }) {
     const getTrailer = (movie) => {
@@ -14,16 +14,18 @@ export function AdditionalInfoCard({ movie }) {
         if (trailer) {
             return (
                 <>
-                    <div className={styles.section}>
-                        <p className={styles.sectionTitle}>Trailer</p>
+                    <div className={styles["info-section"]}>
+                        <p className={`${styles["section-title"]} inter-bold`}>
+                            Trailer
+                        </p>
                         <iframe
-                            className={styles.trailer}
+                            className={styles["trailer"]}
                             src={`https://www.youtube.com/embed/${
                                 getTrailer(movie).key
                             }`}
                         />
                     </div>
-                    <hr className={styles.divider} />
+                    <hr className={styles["divider"]} />
                 </>
             );
         }
@@ -33,13 +35,17 @@ export function AdditionalInfoCard({ movie }) {
         if (description) {
             return (
                 <>
-                    <div className={styles.section}>
-                        <p className={styles.sectionTitle}>Description</p>
-                        <p className={styles.descriptionText}>
+                    <div className={styles["info-section"]}>
+                        <p className={`${styles["section-title"]} inter-bold`}>
+                            Description
+                        </p>
+                        <p
+                            className={`${styles["description-text"]} inter-semibold`}
+                        >
                             {movie.overview}
                         </p>
                     </div>
-                    <hr className={styles.divider} />
+                    <hr className={styles["divider"]} />
                 </>
             );
         }
@@ -48,18 +54,18 @@ export function AdditionalInfoCard({ movie }) {
     const checkProductionLogo = (logoPicture) => {
         if (logoPicture) {
             return (
-                <div className={styles.productionLogoContainer}>
+                <div className={styles["production-logo-container"]}>
                     <img
-                        className={styles.productionLogo}
+                        className={styles["production-logo"]}
                         src={"http://image.tmdb.org/t/p/w500" + logoPicture}
                     />
                 </div>
             );
         } else {
             return (
-                <div className={styles.productionLogoNotFoundContainer}>
+                <div className={styles["production-logo-not-found-container"]}>
                     <img
-                        className={styles.productionLogoNotFound}
+                        className={styles["production-logo-not-found"]}
                         src={clapperboard}
                     />
                 </div>
@@ -70,16 +76,18 @@ export function AdditionalInfoCard({ movie }) {
     const checkCompanies = (production_companies) => {
         if (production_companies?.length) {
             return (
-                <div className={styles.section}>
-                    <p className={styles.sectionTitle}>Production</p>
-                    <div className={styles.prodList}>
+                <div className={styles["info-section"]}>
+                    <p className={styles["section-title"]}>Production</p>
+                    <div className={styles["production-list-container"]}>
                         {production_companies.map((company) => (
                             <div
-                                className={styles.prodElement}
+                                className={styles["production-element"]}
                                 key={company.id}
                             >
                                 {checkProductionLogo(company.logo_path)}
-                                <p className={styles.productionName}>
+                                <p
+                                    className={`${styles["production-name"]} inter-bold`}
+                                >
                                     {company.name}
                                 </p>
                             </div>
@@ -95,7 +103,7 @@ export function AdditionalInfoCard({ movie }) {
     }
 
     return (
-        <div className={styles.bottomCard}>
+        <div className={styles["bottom-card"]}>
             {checkTrailer(getTrailer(movie))}
             {checkDescription(movie.overview)}
             {checkCompanies(movie.production_companies)}

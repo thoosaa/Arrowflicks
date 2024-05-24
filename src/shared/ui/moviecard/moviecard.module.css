@@ -3,16 +3,18 @@
     flex-direction: row;
     align-items: flex-start;
     padding: 24px;
-    gap: 8px;
 
     height: 218px;
 
     background: #ffffff;
     border-radius: 12px;
-
-    flex: none;
+    flex: 1 0 0;
     order: 0;
-    flex-grow: 1;
+    max-width: 482px;
+}
+
+.nonRatingGap {
+    gap: 8px;
 }
 
 .info {
@@ -93,4 +95,21 @@
 
 .rate {
     background-color: inherit;
+}
+
+.rated {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+
+    font-family: "Inter";
+    font-style: normal;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: #000000;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
 }

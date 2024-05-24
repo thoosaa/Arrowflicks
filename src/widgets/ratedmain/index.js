@@ -1,0 +1,1 @@
+export { RatedMain } from "./ratedmain";

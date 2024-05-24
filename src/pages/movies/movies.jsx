@@ -3,9 +3,9 @@ import { MovieMain } from "../../widgets/moviemain/moviemain";
 
 export function MoviesPage() {
     return (
-        <div className="main">
+        <div className="movies-page-layout">
             <SideBar />
-            <MovieMain title="Movies" />
+            <MovieMain />
         </div>
     );
 }

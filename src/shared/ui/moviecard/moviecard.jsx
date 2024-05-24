@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import styles from "./moviecard.module.css";
 import grayStar from "../../svg/grayStar.svg";
 import yellowStar from "../../svg/yellowStar.svg";
+import purpleStar from "../../svg/purpleStar.svg";
 import {
     formatVotes,
     formatYear,
@@ -23,9 +24,48 @@ export function MovieCard({ movie, onCardClick, onStarClick }) {
         fetchGenres();
     }, []);
 
+    const getRating = (id) => {
+        return localStorage.getItem(id);
+    };
+
+    const checkRated = (id) => {
+        const rating = getRating(id);
+        console.log(rating);
+
+        if (!rating) {
+            return (
+                <button className={styles.rate}>
+                    <img src={grayStar} onClick={onStarClick} width={28} />
+                </button>
+            );
+        } else {
+            return (
+                <div className={styles.rated}>
+                    <button className={styles.rate}>
+                        <img
+                            src={purpleStar}
+                            onClick={onStarClick}
+                            width={28}
+                        />
+                    </button>
+                    <p>{rating}</p>
+                </div>
+            );
+        }
+    };
+
+    const setGapStyleByRating = (id) => {
+        const rating = getRating(id);
+        if (!rating) {
+            return styles.nonRatingGap;
+        } else {
+            return "";
+        }
+    };
+
     return (
         <div
-            className={styles.card}
+            className={`${styles.card} ${setGapStyleByRating(movie.id)}`}
             onClick={(event) => onCardClick(event, movie)}
         >
             <div className={styles.info}>
@@ -60,9 +100,7 @@ export function MovieCard({ movie, onCardClick, onStarClick }) {
                     </div>
                 </div>
             </div>
-            <button className={styles.rate}>
-                <img src={grayStar} onClick={onStarClick} />
-            </button>
+            {checkRated(movie.id)}
         </div>
     );
 }

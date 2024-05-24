@@ -3,15 +3,20 @@ import styles from "./searchparams.module.css";
 import { useEffect, useState } from "react";
 
 export function SearchWithParams({ callback }) {
-    //let [placeholder, setPlaceholder] = useState("Select genre");
     let [genreList, setGenreList] = useState([]);
     const [filters, setFilters] = useState({
-        genre: null,
+        genre: [],
         year: null,
         ratingFrom: null,
         ratingTo: null,
         sortBy: "Most Popular",
     });
+
+    const [genresChoice, setGenresChoice] = useState([]);
+    const [genresIsChoiced, setGenresIsChoiced] = useState(false);
+    const [yearIsChoiced, setYearIsChoiced] = useState(false);
+    const [fromIsChoiced, setFromIsChoiced] = useState(false);
+    const [toIsChoiced, setToIsChoiced] = useState(false);
 
     const callbackFunc = () => callback(filters);
 
@@ -40,18 +45,22 @@ export function SearchWithParams({ callback }) {
 
     const addGenreFilters = (list) => {
         console.log("genres: ", list);
+        list.length == 0 ? setGenresIsChoiced(false) : setGenresIsChoiced(true);
         changeFilters("genre", list);
     };
 
     const addYearFilters = (value) => {
+        value == null ? setYearIsChoiced(false) : setYearIsChoiced(true);
         changeFilters("year", value);
     };
 
     const addFromFilters = (value) => {
+        value == null ? setFromIsChoiced(false) : setFromIsChoiced(true);
         changeFilters("ratingFrom", value);
     };
 
     const addToFilters = (value) => {
+        value == null ? setToIsChoiced(false) : setToIsChoiced(true);
         changeFilters("ratingTo", value);
     };
 
@@ -61,31 +70,49 @@ export function SearchWithParams({ callback }) {
 
     const resetFilters = () => {
         setFilters({
-            genre: null,
+            genre: [],
             year: null,
             ratingFrom: null,
             ratingTo: null,
-            sortBy: "Most Popular",
+            sortBy: filters["sortBy"],
         });
+
+        setGenresIsChoiced(false);
+        setYearIsChoiced(false);
+        setFromIsChoiced(false);
+        setToIsChoiced(false);
     };
 
-    let largeData = [];
+    let yearsList = [];
     let date = new Date();
     for (let i = date.getFullYear(); i >= 1900; i--) {
-        largeData.push(i.toString());
+        yearsList.push(i.toString());
     }
 
-    /*useEffect(() => {
-        console.log(value);
-        if (value?.length) setPlaceholder("");
-        else setPlaceholder("Select genres");
-    }, [value]);*/
-
+    let button;
+    if (genresIsChoiced || yearIsChoiced || fromIsChoiced || toIsChoiced) {
+        button = (
+            <button className={styles.resetFilter} onClick={resetFilters}>
+                Reset filters
+            </button>
+        );
+    } else {
+        button = (
+            <button
+                className={styles.resetFilter}
+                onClick={resetFilters}
+                disabled
+            >
+                Reset filters
+            </button>
+        );
+    }
     return (
         <div className={styles.container}>
             <div className={styles.parametrs}>
                 <MultiSelect
                     label="Genres"
+                    withCheckIcon={false}
                     placeholder="Select genre"
                     data={genreList}
                     classNames={{
@@ -93,33 +120,32 @@ export function SearchWithParams({ callback }) {
                         input: [styles.inputMulti, styles.input],
                         label: styles.inputLabel,
                         option: styles.option,
-                        pill: styles.pill,
-                    }}
-                    styles={{
-                        pill: {
-                            withRemoveButton: true,
-                        },
                     }}
                     id={"genre"}
                     onChange={addGenreFilters}
+                    value={filters.genre}
                 />
                 <Select
                     label="Release year"
+                    withCheckIcon={false}
                     placeholder="Select release year"
-                    data={largeData}
+                    data={yearsList}
                     classNames={{
                         root: styles.rootMulti,
                         input: [styles.inputMulti, styles.input],
                         label: styles.inputLabel,
                         option: styles.option,
+                        pills: styles.pill,
                     }}
                     searchable
                     id={"year"}
+                    value={filters.year}
                     onChange={addYearFilters}
                 />
                 <div className={styles.ratingContainer}>
                     <Select
                         label="Ratings"
+                        withCheckIcon={false}
                         placeholder="From"
                         min={0}
                         max={10}
@@ -142,10 +168,12 @@ export function SearchWithParams({ callback }) {
                             "10",
                         ]}
                         id={"ratingFrom"}
+                        value={filters.ratingFrom}
                         onChange={addFromFilters}
                     />
                     <Select
                         label=" "
+                        withCheckIcon={false}
                         placeholder="To"
                         min={0}
                         max={10}
@@ -168,24 +196,28 @@ export function SearchWithParams({ callback }) {
                             option: styles.option,
                         }}
                         id={"ratingTwo"}
+                        value={filters.ratingTo}
                         onChange={addToFilters}
                     />
                 </div>
-                <button className={styles.resetFilter}>Reset filters</button>
+                {/* <button className={styles.resetFilter} onClick={resetFilters}>
+                    Reset filters
+                </button> */}
+                {button}
             </div>
             <div className={styles.sorting}>
                 <Select
                     withCheckIcon={false}
                     label="Sort by"
                     data={[
-                        "Most popular",
-                        "Least popular",
-                        "Most rated",
-                        "Least rated",
-                        "Most voted",
-                        "Least voted",
+                        "Most Popular",
+                        "Least Popular",
+                        "Most Rated",
+                        "Least Rated",
+                        "Most Voted",
+                        "Least Voted",
                     ]}
-                    defaultValue={"Most popular"}
+                    defaultValue={"Most Popular"}
                     classNames={{
                         label: styles.inputLabel,
                         root: styles.rootMulti,

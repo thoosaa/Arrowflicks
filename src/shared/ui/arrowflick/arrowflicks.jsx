@@ -3,9 +3,11 @@ import logo from "./logo.svg";
 
 export function ArrowFlicks() {
     return (
-        <div className={styles.ArrowFlicks}>
-            <img src={logo}></img>
-            <p>ArrowFlicks</p>
+        <div className={styles["arrowflicks"]}>
+            <img src={logo} className={styles["logo"]}></img>
+            <p className={`${styles["company-name"]} poppins-bold`}>
+                ArrowFlicks
+            </p>
         </div>
     );
 }

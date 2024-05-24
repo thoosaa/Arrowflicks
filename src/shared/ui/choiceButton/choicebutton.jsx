@@ -4,7 +4,9 @@ export function ChoiceButton({ children, isActive, ...props }) {
     return (
         <button
             {...props}
-            className={isActive ? styles.active : styles.notActive}
+            className={`${styles["choice-button"]} inter ${
+                isActive ? styles["active"] : styles["not-active"]
+            }`}
         >
             {children}
         </button>

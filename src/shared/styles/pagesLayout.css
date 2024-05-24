@@ -1,0 +1,24 @@
+.movies-page-layout {
+    display: flex;
+    gap: 90px;
+    width: 1440px;
+    height: 2782px;
+    background: #f5f5f6;
+}
+
+.movie-page-layout {
+    display: flex;
+    flex-direction: row;
+    gap: 174px;
+    width: 1440px;
+    height: 1596px;
+    background: #f5f5f6;
+}
+
+.rated-page-layout {
+    display: flex;
+    gap: 90px;
+    width: 1440px;
+    height: 900px;
+    background: #f5f5f6;
+}

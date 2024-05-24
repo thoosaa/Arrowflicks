@@ -1,0 +1,44 @@
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    padding: 0px;
+    gap: 40px;
+
+    width: 980px;
+    height: 596px;
+    margin-top: 40px;
+
+    > h1 {
+        font-family: "Inter";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 32px;
+        width: 980px;
+        line-height: 140%;
+        margin-bottom: 16px;
+    }
+}
+
+.moviesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.titleSearch {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.container {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.pag {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

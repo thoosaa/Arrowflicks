@@ -5,11 +5,10 @@
     padding: 0px;
     gap: 20px;
 
-    position: absolute;
     width: 800px;
     height: 1189px;
-    left: 460px;
-    top: 40px;
+    /*left: 460px;*/
+    margin-top: 40px;
 }
 
 .loaderContainer {

@@ -1,50 +1,34 @@
-.active,
-.notActive {
+.choice-button {
     border: 0;
     padding: 10px;
     margin: 0;
     height: 42px;
     border-radius: 8px;
-    width: 232px; /**/
+    width: 232px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    font-size: 16px;
+    line-height: 140%;
+    display: flex;
+    align-items: center;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
 }
 
 .active {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    background: #e5d5fa;
-
-    font-family: "Inter";
-    font-style: normal;
+    background: var(--purple-200);
     font-weight: 700;
-    font-size: 16px;
-    line-height: 140%;
-    display: flex;
-    align-items: center;
-
-    color: #9854f6;
-
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+    color: var(--purple-500-main);
 }
 
-.notActive {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
+.not-active {
     background: #f2ebf9;
     border-radius: 8px;
-
-    font-family: "Inter";
-    font-style: normal;
-    font-size: 16px;
-    line-height: 140%;
-    display: flex;
-    align-items: center;
-
     color: #000000;
-    flex: none;
-    order: 0;
-    flex-grow: 0;
+}
+
+.not-active:hover {
+    color: var(--purple-200);
 }

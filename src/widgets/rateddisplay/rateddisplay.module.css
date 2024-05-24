@@ -1,0 +1,17 @@
+.moviesContainer {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.container {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.pag {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}

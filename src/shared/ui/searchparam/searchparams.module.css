@@ -35,7 +35,8 @@
 }
 
 .input:hover,
-.input:focus {
+.input:focus,
+input:active {
     border: 1px solid #9854f6;
 }
 
@@ -93,10 +94,13 @@
     line-height: 140%;
 }
 
-.option selected {
-    background-color: #541f9d !important;
+.option {
+    &[data-combobox-active="true"] {
+        background-color: var(--purple-500-main);
+        color: white;
+    }
 }
 
 .option:hover {
-    background-color: #f2ebf9 !important;
+    background-color: var(--purple-100) !important;
 }

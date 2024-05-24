@@ -6,6 +6,7 @@ import { useDisclosure } from "@mantine/hooks";
 import { useNavigate } from "react-router-dom";
 import { AddRatingModal } from "../../shared/ui/addratingmodal";
 import { createRequest } from "../../features/createRequest";
+import notFoundMovies from "../../shared/svg/notFoundMovies.svg";
 
 export function MovieDisplay({ options }) {
     const navigate = useNavigate();
@@ -18,7 +19,7 @@ export function MovieDisplay({ options }) {
 
     const onCardClick = (event, movie) => {
         if (!event.target?.closest("button")) navigate(`/movies/${movie.id}`);
-        else setModalMovie(movie.title);
+        else setModalMovie(movie);
     };
 
     useEffect(() => {
@@ -34,9 +35,12 @@ export function MovieDisplay({ options }) {
                 (data) => (data = data.json())
             );
 
-            setTotalPages(moviesData.total_pages);
+            setTotalPages(
+                moviesData.total_pages > 500 ? 500 : moviesData.total_pages
+            );
 
             setIsLoading(false);
+            console.log(moviesData.results);
             setMovies(moviesData.results);
         };
         fetchMoviesData(activePage);
@@ -55,24 +59,52 @@ export function MovieDisplay({ options }) {
         );
     }
 
+    if (!movies.length) {
+        return (
+            <div className={styles.notFound}>
+                <img src={notFoundMovies} />
+                <p>We don't have such movies, look for another one</p>
+            </div>
+        );
+    }
+
     return (
         <>
             <div className={styles.container}>
-                {movies.map((movie) => (
-                    <MovieCard
-                        movie={movie}
-                        key={movie.id}
-                        id={movie.id}
-                        onCardClick={onCardClick}
-                        onStarClick={open}
-                    />
-                ))}
+                <div className={styles.moviesContainer}>
+                    {movies.map((movie) => (
+                        <MovieCard
+                            movie={movie}
+                            key={movie.id}
+                            id={movie.id}
+                            onCardClick={onCardClick}
+                            onStarClick={open}
+                        />
+                    ))}
+                </div>
                 <div className={styles.pag}>
                     <Pagination
                         total={totalPages}
                         value={activePage}
                         onChange={setPage}
                         color="#9854f6"
+                        getItemProps={(page) => {
+                            if (
+                                page === activePage - 1 ||
+                                page === activePage ||
+                                page === activePage + 1 ||
+                                (activePage === 1 && page === activePage + 2) ||
+                                (activePage === totalPages &&
+                                    page === activePage - 2)
+                            ) {
+                                return {};
+                            }
+
+                            return { style: { display: "none" } };
+                        }}
+                        styles={(theme) => ({
+                            dots: { display: "none" },
+                        })}
                     />
                 </div>
             </div>

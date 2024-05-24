@@ -1,0 +1,19 @@
+.inter-bold {
+    font-family: "Inter";
+    font-weight: 700;
+}
+
+.inter-semibold {
+    font-family: "Inter";
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.inter {
+    font-family: "Inter";
+}
+
+.poppins-bold {
+    font-family: "Poppins";
+    font-weight: 600;
+}

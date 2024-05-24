@@ -1,31 +1,24 @@
-.modalHeader {
+.modal-header {
     display: flex;
     flex-direction: row;
     align-items: center;
     padding: 50px;
 
-    border-bottom: 1px solid #eaebed;
+    border-bottom: 1px solid var(--grey-200);
     flex: none;
 }
 
-.modalTitle {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 400;
-    font-size: 16px;
+.modal-title {
     line-height: 140%;
     color: #000000;
     flex: none;
 }
 
-.modalBody {
+.modal-body {
     padding: 16px !important;
 }
 
-.movieTitle {
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
+.movie-title {
     font-size: 16px;
     line-height: 140%;
 
@@ -33,37 +26,42 @@
     flex: none;
 }
 
-.modalRateContainer {
+.modal-rate-container {
     display: flex;
     flex-direction: column;
     gap: 16px;
 }
 
-.starsRating {
+.stars-rating-container {
     display: flex;
     justify-content: space-between;
 }
 
-.modalButtons {
+.modal-buttons-container {
     display: flex;
 }
 
-.modalButton {
+.modal-button {
     padding: 10px 20px;
     border-radius: 8px;
-    font-family: "Inter";
-    font-style: normal;
-    font-weight: 700;
     font-size: 16px;
     line-height: 19.6px;
 }
 
-.saveButton {
+.save-button {
     color: white;
-    background-color: #9854f6;
+    background-color: var(--purple-500-main);
 }
 
-.removeButton {
+.save-button:hover {
+    background-color: var(--purple-400);
+}
+
+.save-button:active {
+    background-color: var(--purple-600);
+}
+
+.remove-button {
     background-color: inherit;
-    color: #9854f6;
+    color: var(--purple-500-main);
 }
