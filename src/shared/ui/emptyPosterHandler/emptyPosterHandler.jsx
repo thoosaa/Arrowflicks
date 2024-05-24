@@ -1,4 +1,4 @@
-import styles from "./emptyPosterHandler.css";
+import styles from "./emptyPosterHandler.module.css";
 import noPoster from "../../svg/posterNotFound.svg";
 
 export function showCorrectPicture(path, width, height) {
