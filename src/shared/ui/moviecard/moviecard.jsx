@@ -18,7 +18,7 @@ export function MovieCard({ movie, onCardClick, onStarClick }) {
     useEffect(() => {
         const fetchGenres = async () => {
             const response = await axios.get(
-                `/api/movie/${movie.id}?language=en-US`
+                `/api/3/movie/${movie.id}?language=en-US`
             );
             const movieData = response.data;
             setGenres(movieData.genres);

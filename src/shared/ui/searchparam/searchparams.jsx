@@ -28,7 +28,7 @@ export function SearchWithParams({ callback }) {
     useEffect(() => {
         const fetchGenresList = async () => {
             const response = await axios.get(
-                "/api/genre/movie/list?language=en"
+                "/api/3/genre/movie/list?language=en"
             );
             const genresData = response.data;
             const res = genresData.genres.map((genre) => ({
