@@ -1,6 +1,7 @@
 import { MultiSelect, NumberInput, Select } from "@mantine/core";
 import styles from "./searchparams.module.css";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 export function SearchWithParams({ callback }) {
     let [genreList, setGenreList] = useState([]);
@@ -26,9 +27,10 @@ export function SearchWithParams({ callback }) {
 
     useEffect(() => {
         const fetchGenresList = async () => {
-            const genresData = await fetch(
+            const response = await axios.get(
                 "/api/genre/movie/list?language=en"
-            ).then((data) => (data = data.json()));
+            );
+            const genresData = response.data;
             const res = genresData.genres.map((genre) => ({
                 value: `${genre.id}`,
                 label: genre.name,

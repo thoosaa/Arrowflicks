@@ -9,9 +9,10 @@ export function MoviePage() {
 
     useEffect(() => {
         const fetchMovieData = async () => {
-            const movieData = await fetch(
+            const response = await axios.get(
                 `/api/movie/${movie_id}?append_to_response=videos%2C%20images&language=en-US`
-            ).then((data) => (data = data.json()));
+            );
+            const movieData = response.data;
             setMovie(movieData);
         };
         fetchMovieData();

@@ -7,6 +7,7 @@ import { useNavigate } from "react-router-dom";
 import { AddRatingModal } from "../../shared/ui/addratingmodal";
 import { createRequest } from "../../features/createRequest";
 import notFoundMovies from "../../shared/svg/notFoundMovies.svg";
+import axios from "axios";
 
 export function MovieDisplay({ options }) {
     const navigate = useNavigate();
@@ -27,14 +28,8 @@ export function MovieDisplay({ options }) {
         const fetchMoviesData = async (activePage = 1) => {
             let moviesData, searchstr;
             searchstr = createRequest(options, activePage);
-            /*} else {
-                searchstr = `/api/discover/movie?include_adult=false&include_video=false&language=en-US&page=${activePage}&sort_by=popularity.desc`;
-            }*/
-
-            moviesData = await fetch(searchstr).then(
-                (data) => (data = data.json())
-            );
-
+            const response = await axios.get(searchstr);
+            moviesData = response.data;
             setTotalPages(
                 moviesData.total_pages > 500 ? 500 : moviesData.total_pages
             );

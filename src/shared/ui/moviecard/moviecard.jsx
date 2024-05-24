@@ -10,15 +10,17 @@ import {
     formatGenres,
 } from "../../../features/correctDisplay";
 import { showCorrectPicture } from "../emptyPosterHandler/emptyPosterHandler";
+import axios from "axios";
 
 export function MovieCard({ movie, onCardClick, onStarClick }) {
     let [genres, setGenres] = useState("");
 
     useEffect(() => {
         const fetchGenres = async () => {
-            const movieData = await fetch(
+            const response = await axios.get(
                 `/api/movie/${movie.id}?language=en-US`
-            ).then((data) => (data = data.json()));
+            );
+            const movieData = response.data;
             setGenres(movieData.genres);
         };
         fetchGenres();
